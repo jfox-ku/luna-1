@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 1062596b371fb7c4fab2a29acbb7142f
+guid: 71dfbcee42b05fa449b0309db024edc7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2898676305003450793
-    second: belua-idlet_0
+      213: -4751261844580259833
+    second: belua-idlet 1_0
   - first:
-      213: -1766621863942773488
-    second: belua-idlet_1
+      213: -5060274703692302448
+    second: belua-idlet 1_1
   - first:
-      213: -6706036988921494925
-    second: belua-idlet_2
+      213: -111294785740020217
+    second: belua-idlet 1_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -134,64 +134,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: belua-idlet_0
+      name: belua-idlet 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 15
         height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a19296ddba2a3820800000000000000
-      internalID: 2898676305003450793
+      spriteID: 7082dee8680201eb0800000000000000
+      internalID: -4751261844580259833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: belua-idlet_1
+      name: belua-idlet 1_1
       rect:
         serializedVersion: 2
         x: 15
         y: 0
         width: 15
         height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 015a04356c2bb77e0800000000000000
-      internalID: -1766621863942773488
+      spriteID: 097768ca7fa46c9b0800000000000000
+      internalID: -5060274703692302448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: belua-idlet_2
+      name: belua-idlet 1_2
       rect:
         serializedVersion: 2
         x: 30
         y: 0
         width: 15
         height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37244b083ee5fe2a0800000000000000
-      internalID: -6706036988921494925
+      spriteID: 706ec966bf9947ef0800000000000000
+      internalID: -111294785740020217
       vertices: []
       indices: 
       edges: []
