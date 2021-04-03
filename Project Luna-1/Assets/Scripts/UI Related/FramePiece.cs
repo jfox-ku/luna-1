@@ -8,16 +8,16 @@ public class FramePiece : MonoBehaviour, IDropHandler
     private bool IsFree=true;
 
     public void OnDrop(PointerEventData eventData) {
-        Debug.Log("On drop event!");
+        //Debug.Log("On drop event!");
         if (eventData.pointerDrag != null) {
             //eventData.pointerDrag.GetComponent<Transform>().position = this.transform.position;
             var drgbl = eventData.pointerDrag.GetComponent<Draggable>();
-            Debug.Log(drgbl);
+            //Debug.Log(drgbl);
             if (drgbl!=null) {
 
                 if (IsFree) {
                     IsFree = false;
-                    Debug.Log("Setting parent "+this.transform.name);
+                    //Debug.Log("Setting parent "+this.transform.name);
                     drgbl.setFrameParent(this);
                 }
 

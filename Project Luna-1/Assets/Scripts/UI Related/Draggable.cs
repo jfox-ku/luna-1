@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Vector3 oldPos;
     private CanvasGroup canvasGroup;
@@ -20,11 +20,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         canvasGroup.alpha = 0.6f;
         CurrentFrame.DraggableLeft();
         oldPos = this.transform.position;
-        Debug.Log("Begin drag: "+eventData.position+ ": "+this.transform.name);
+        //Debug.Log("Begin drag: "+eventData.position+ ": "+this.transform.name);
     }
 
     public void OnDrag(PointerEventData eventData) {
-
+        //ugly af, but its fine, I will fix this. Some day xd
+        if(canvasGroup.alpha != 0.6f) canvasGroup.alpha = 0.6f;
         this.transform.position = new Vector3(eventData.position.x,eventData.position.y,this.transform.position.z);
     }
 
@@ -47,24 +48,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         yield return new WaitForSeconds(0.05f);
         if (SuccesfulDrop) {
             SuccesfulDrop = false;
-            
-        } else {
-
-        }
-
+        } 
         this.transform.position = oldPos;
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void OnPointerEnter(PointerEventData eventData) {
+        canvasGroup.alpha = 0.8f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnPointerExit(PointerEventData eventData) {
+        canvasGroup.alpha = 1f;
     }
 }
