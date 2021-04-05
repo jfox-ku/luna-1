@@ -12,26 +12,29 @@ public class HealthScript : MonoBehaviour
     public float maxHealh;
     public float currentHealth;
 
+    public Transform PopUpPosition;
+
     private void Start() {
         var BarCreator = FindObjectOfType<BarCreator>();
         BarCreator.CreateHealthBar(this);
     }
 
+
+    public void SetMaxHealth(float ma) {
+        maxHealh = ma;
+        currentHealth = ma;
+        
+    }
+
     public void TakeDamage(float dmg) {
-        Debug.Log("Taking "+dmg+ " damage!");
         currentHealth -= dmg;
+        DmgPopUp.Create(PopUpPosition.position,(int)dmg);
         if (currentHealth <= 0) Die();
         else {
             healhPercentChangeEvent?.Invoke(currentHealth/maxHealh);
         }
 
 
-    }
-
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.A)) {
-            TakeDamage(2f);
-        }
     }
 
     private void Die() {

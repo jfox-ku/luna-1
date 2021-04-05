@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257c7e2c8e46b1844b44938e92887231, type: 3}
+  m_Name: Luna
+  m_EditorClassIdentifier: 
+  FighterName: Luna
+  MaxHP: 500
+  baseDamage: 45
+  baseAttackCooldown: 1.5
+  FighterSprite: {fileID: 1906688518706287075, guid: bf1990d5ef08dcc44ba78e8c76a0d01f, type: 3}

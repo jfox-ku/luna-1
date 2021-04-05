@@ -45,7 +45,13 @@ public class AttackTimer : MonoBehaviour
     }
 
     public void StartAttackLoop() {
+        StopAllCoroutines();
         StartCoroutine(AttackLoop());
+    }
+
+    public void StopAttackLoop() {
+        StopAllCoroutines();
+        
     }
 
 

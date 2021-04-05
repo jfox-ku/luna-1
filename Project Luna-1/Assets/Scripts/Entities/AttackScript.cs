@@ -5,9 +5,16 @@ using System;
 
 public class AttackScript : MonoBehaviour
 {
+    //Placeholder target to attack.
     private HealthScript Target;
+
     public AttackTimer ATimer;
     public float AttackDamage = 5f;
+
+
+    public void SetAttackCooldown(float f) {
+        ATimer.attackCooldown = f;
+    }
 
 
 
@@ -16,7 +23,6 @@ public class AttackScript : MonoBehaviour
     {
         ATimer = GetComponent<AttackTimer>();
         ATimer.AttackEvent += Attack;
-        FindTarget();
 
         var BarCreator = FindObjectOfType<BarCreator>();
         BarCreator.CreateAttackBar(this);
@@ -24,6 +30,8 @@ public class AttackScript : MonoBehaviour
     }
 
     public void Attack() {
+
+        FindTarget();
         if (Target == null) {
             FindTarget();
             if (Target == null) {
@@ -52,7 +60,7 @@ public class AttackScript : MonoBehaviour
     //Not used yet
     private IEnumerator FindTargetCo() {
         while (Target == null) {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             var hList = FindObjectsOfType<HealthScript>();
             foreach (HealthScript item in hList) {
                 if (item.transform != this.transform) {

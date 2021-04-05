@@ -15,7 +15,11 @@ public class BarCreator : MonoBehaviour
             hbarsList = new List<GameObject>();
         }
 
-        var bar =Instantiate(hbarPrefab,hs.transform.position+Vector3.up*1.4f,Quaternion.identity,this.transform);
+        var bar =Instantiate(hbarPrefab,
+            new Vector3(hs.transform.position.x,hs.GetComponentInChildren<SpriteRenderer>().bounds.extents.y+0.6f,hs.transform.position.z)
+            ,Quaternion.identity,
+            this.transform);
+
         bar.GetComponent<HealthDisplayScript>().SetMyGuy(hs);
 
         hbarsList.Add(bar);
@@ -27,7 +31,10 @@ public class BarCreator : MonoBehaviour
             abarsList = new List<GameObject>();
         }
 
-        var bar = Instantiate(abarPrefab, asc.transform.position + Vector3.up * 1.2f, Quaternion.identity, this.transform);
+        var bar = Instantiate(abarPrefab, 
+            new Vector3(asc.transform.position.x, asc.GetComponentInChildren<SpriteRenderer>().bounds.extents.y + 0.3f,
+            asc.transform.position.z), Quaternion.identity, this.transform);
+
         bar.GetComponent<AttackBarDisplay>().SetMyGuy(asc.ATimer);
 
         abarsList.Add(bar);
