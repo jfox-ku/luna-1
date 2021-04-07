@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EyeAttack
   m_EditorClassIdentifier: 
   attackName: eye
-  attackBaseDamage: 25
+  attackBaseDamage: 40
   stunChance: 25
   slowChance: 0
   attackSprite: {fileID: 3238446460064892650, guid: 329fb60772a717246a1258d6bd4afad7, type: 3}

@@ -2,35 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomManager : MonoBehaviour
+public static class RandomManager 
 {
-    private RandomManager p_instance;
-    public RandomManager Instance {
-        get {
-            if(p_instance == null) {
-                p_instance = FindObjectOfType<RandomManager>();
-            }
-            return p_instance;
-        }
-        
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        p_instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-    public int Dice9Roll() {
+    public static int Dice9Roll() {
         int rand = Random.Range(1,10);
         return rand;
 
+    }
+
+    public static int MappedRoll() {
+        return Mapping(Dice9Roll());
+    }
+
+    public static int Mapping(int k) {
+        switch (k) {
+            case 1: return 0;
+            case 2: return 1;
+            case 3: return 1;
+            case 4: return 2;
+            case 5: return 2;
+            case 6: return 2;
+            case 7: return 3;
+            case 8: return 3;
+            case 9: return 4;
+
+        }
+        return 0;
     }
 }

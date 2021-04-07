@@ -9,6 +9,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private CanvasGroup canvasGroup;
     public FramePiece CurrentFrame;
 
+    public AttackSO attackData;
+
     public bool SuccesfulDrop = false;
 
     private void Awake() {
@@ -30,11 +32,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
 
     public void setFrameParent(FramePiece fp) {
-        SuccesfulDrop = true;
-        CurrentFrame = fp;
-        oldPos = CurrentFrame.transform.position;
-        
-
+        if(fp != CurrentFrame) {
+            CurrentFrame.DraggableLeft();
+        }
+            SuccesfulDrop = true;
+            CurrentFrame = fp;
+            oldPos = CurrentFrame.transform.position;
+       
 
     }
 
